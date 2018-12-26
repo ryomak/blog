@@ -1,39 +1,16 @@
- <!DOCTYPE HTML>
-<html>
+{{ define "main" }}
+  {{ $pag := .Paginate (where .Data.Pages "Type" "post") 5 }}
 
-<head>
-    {{ partial "head.html" . }}
-</head>
+  <div class="p-archive">
+    <div class="c-container">
+      <ul class="c-archive-list">
+      {{ range $pag.Pages }}
+        {{ .Render "li" }}
+      {{ end }}
+      </ul>
 
-<body>
-    <div class="container">
-        <header>
-            {{ partial "header.html" . }}
-        </header>
-        <div class="row">
-            <div class="col-sm-9 main">
-                <h1>{{ .Title }}</h1>
-                <div class="list">
-                    <!-- 記事一覧 -->
-                    {{ range (.Paginator 10).Pages }} {{ .Render "li" }} {{ end }}
-                </div>
-                <!--次のページへ的なやつ-->
-                {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-                <div>
-                    <nav role="pagination">
-                        {{ if .Paginator.HasPrev }}
-                        <a href="{{ .Paginator.Prev.URL }}">&lt;</a> {{ end }}
-                        <span class="">
-                            {{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}
-                        </span> {{if .Paginator.HasNext}}
-                        <a href="{{ .Paginator.Next.URL }}">&gt;</a> {{ end }}
-                    </nav>
-                </div>
-                {{ end }}
-            </div>
-        </div>
+      {{ partial "pagenation.html" . }}
     </div>
-    {{ partial "footer.html" . }}
-</body>
+  </div>
 
-</html>
+{{ end }}

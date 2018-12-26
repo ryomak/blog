@@ -5,3 +5,6 @@ draft: true
 ---
 
 ## init
+初めまして
+
+

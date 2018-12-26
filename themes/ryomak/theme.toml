@@ -1,18 +1,18 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Ryomak"
+name = "Minimage"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
-min_version = "0.41"
+licenselink = "https://github.com/d-kusk/minimage/blob/master/LICENSE.md"
+description = "It is simple, thumbnail can be set theme."
+homepage = "https://github.com/d-kusk/minimage/"
+tags = ["responsive", "simple"]
+features = ["Responsive", "Thumbnail", "JSON-LD"]
+min_version = "0.26"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Daisuke KONISHI"
+  homepage = "https://dasiukekonishi.com"
 
 # If porting an existing theme
 [original]
